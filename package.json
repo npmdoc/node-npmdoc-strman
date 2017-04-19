@@ -1,1 +1,39 @@
-{     "devDependencies": {         "strman": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-strman",     "homepage": "https://github.com/npmdoc/node-npmdoc-strman",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-strman.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [strman (v2.0.0)](https://github.com/dleitee/strman#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-strman.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-strman) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-strman.svg)](https://travis-ci.org/npmdoc/node-npmdoc-strman)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "strman": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-strman",
+    "keywords": [
+        "documentation",
+        "strman"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_strman.js",
+    "name": "npmdoc-strman",
+    "nameAlias": "npmdoc_strman",
+    "nameOriginal": "npmdoc-strman",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-strman.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
